@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:soapui-listeners
+	xmlns:tns="http://eviware.com/soapui/config">
+	<tns:listener id="ProjectRunListener"
+		listenerClass="com.sabre.qa.nimbus.reporting.listeners.ProjectRunListener"
+		listenerInterface="com.eviware.soapui.model.testsuite.ProjectRunListener" />
+	<tns:listener id="TestSuiteRunListener"
+		listenerClass="com.sabre.qa.nimbus.reporting.listeners.TestSuiteRunListener"
+		listenerInterface="com.eviware.soapui.model.testsuite.TestSuiteRunListener" />
+	<tns:listener id="TestRunListener"
+		listenerClass="com.sabre.qa.nimbus.reporting.listeners.TestRunListener"
+		listenerInterface="com.eviware.soapui.model.testsuite.TestRunListener" />
+</tns:soapui-listeners>

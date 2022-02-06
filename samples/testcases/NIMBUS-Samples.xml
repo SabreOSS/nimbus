@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f9f38291-2444-4359-9793-7246f043de37" activeEnvironment="Default" name="NIMBUS_Samples" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="Nimbus-TestSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="true"/>
+</xml-fragment>]]></con:setting></con:settings><con:testSuite id="f34edd43-f6a2-46ab-a429-7cbd95d0fa15" name="Nimbus-TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1703ad8d-60af-4b0c-aa3e-e3715342e459" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SimpleTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="7e0271af-8954-4aeb-a3b4-606339c7471c"><con:settings/><con:config><script>import com.sabre.qa.nimbus.reporting.commons.NimbusReportUtils;
+NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
+nimbusReportUtils.writePassLogToTestLogger("Simple Test Case Passed");</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a5b929e9-70ed-484f-ac66-f5ae02e96745" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DataDrivenTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="ab540d88-c9d0-47ab-a0f8-9bbd3f754fcb"><con:settings/><con:config><script>import com.sabre.qa.nimbus.reporting.commons.NimbusReportUtils;
+NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
+nimbusReportUtils.writePassLogToTestLogger(context.expand('${#TestCase#Print_Message}')  +  " Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusDataDrivenFlag</con:name><con:value>true</con:value></con:property><con:property><con:name>NimbusDataSourcePath</con:name><con:value>samples/data/DataDrivenTestCase_Data.xlsx|DataDrivenTestCase</con:value></con:property></con:properties></con:testCase><con:testCase id="8e473b4e-caf0-4a1d-baa8-b4a43f1da17e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TaggedTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="f15b1232-3f5e-430b-a7a2-e1f6b24b89db"><con:settings/><con:config><script>import com.sabre.qa.nimbus.reporting.commons.NimbusReportUtils;
+NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
+nimbusReportUtils.writePassLogToTestLogger("Tagged Test Case Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusTags</con:name><con:value>@Tag1</con:value></con:property></con:properties></con:testCase><con:testCase id="5c74771f-16a3-4d8d-a4cf-45adf6eda55a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TaggedDataDrivenTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="5999850c-c4e6-4d6f-80c8-bcb16c7f6a17"><con:settings/><con:config><script>import com.sabre.qa.nimbus.reporting.commons.NimbusReportUtils;
+NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
+nimbusReportUtils.writePassLogToTestLogger(context.expand('${#TestCase#Print_Message}')  +  " Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusDataDrivenFlag</con:name><con:value>true</con:value></con:property><con:property><con:name>NimbusDataSourcePath</con:name><con:value>samples/data/DataDrivenTestCase_Data.xlsx|TaggedDataDrivenTestCase</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

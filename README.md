@@ -13,10 +13,10 @@
 ## _NIMBUS_
 
 
-NIMBUS is a functional test framework built on yop of SOAPUI that adds below PRO like capabilities to SOAPUI community edition
+NIMBUS is a functional test automation framework built on top of SOAPUI that adds below PRO like capabilities to SOAPUI community edition
 * Data driven capability
 * Testcase tagging
-* Extent Repots Integration
+* Extent Reports Integration
     * HTML Reports for analysis
     * MongoDB Integration for test results storage and analytics
 

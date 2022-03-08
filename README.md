@@ -98,7 +98,7 @@ git pull
 * Go to Properties tab and under System Properties specify the tags you want to execute
   * eg : NimbusTags=@Tag1
 * Click on Launch Button. This will execute only the test cases that are tagged as @Tag1 and skip all other test cases.
-* Please refer testcases  "TaggedTestCase" and "TaggedDataDrivenTestCase" form the sample provided under samples folder
+* Please refer testcases  "TaggedTestCase" and "TaggedDataDrivenTestCase" from the sample provided under samples folder
 
 ### HTML Reports
 

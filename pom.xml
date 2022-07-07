@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sabre.qa.nimbus</groupId>
 	<artifactId>nimbus-soapui-framework</artifactId>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>nimbus-soapui-framework</name>
 	<description>Functional test framework Built on top of soapui</description>
@@ -118,6 +118,9 @@
 			<artifactId>poi</artifactId>
 		</dependency>
 	</dependencies>
+	<modules>
+		<module>libs</module>
+	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

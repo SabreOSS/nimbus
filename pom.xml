@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sabre.qa.nimbus</groupId>
 	<artifactId>nimbus-soapui-framework</artifactId>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>nimbus-soapui-framework</name>
 	<description>Functional test framework Built on top of soapui</description>
@@ -55,7 +55,7 @@
 							</execution>
 						</executions>
 						<configuration>
-							<executable>java</executable>
+							<executable>${JAVA_HOME}\bin\java</executable>
 							<arguments>
 								<argument>-classpath</argument>
 								<!-- automatically creates the classpath using all project dependencies,
@@ -68,12 +68,32 @@
 					</plugin>
 				</plugins>
 			</build>
+			<dependencies>
+				<dependency>
+					<groupId>com.smartbear.soapui</groupId>
+					<artifactId>soapui</artifactId>
+					<version>${soapui.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>com.sabre.qa.nimbus</groupId>
+					<artifactId>groovy-scripts</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>com.jgoodies</groupId>
+					<artifactId>forms</artifactId>
+					<version>1.0.7</version>
+				</dependency>
+			</dependencies>
 		</profile>
 		<profile>
 			<id>execute</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
+			<modules>
+				<module>framework-sub-modules/groovy-scripts</module>
+			</modules>
 			<build>
 				<plugins>
 					<plugin>
@@ -94,12 +114,20 @@
 					</plugin>
 				</plugins>
 			</build>
+			<dependencies>
+				<dependency>
+					<groupId>com.sabre.qa.nimbus</groupId>
+					<artifactId>groovy-scripts</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
 		</profile>
 	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>com.smartbear.soapui</groupId>
 			<artifactId>soapui</artifactId>
+			<version>${soapui.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -150,6 +178,21 @@
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>2.3.30</version>
+			</dependency>
+			<dependency>
+				<groupId>io.reactivex.rxjava3</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>3.0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.9.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

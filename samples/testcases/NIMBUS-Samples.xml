@@ -18,10 +18,10 @@
   <con:entry key="Global Properties" value=""/>
   <con:entry key="Project Properties" value=""/>
   <con:entry key="Project Password" value=""/>
-  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="TestCase" value="SampleDebugging"/>
   <con:entry key="Username" value=""/>
   <con:entry key="user-settings.xml Password" value=""/>
-  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="TestRunner Path" value="C:\DevCode\latestDebugging\nimbus\execute\normal"/>
   <con:entry key="Environment" value="Default"/>
   <con:entry key="Coverage Report" value="false"/>
   <con:entry key="Enable UI" value="false"/>
@@ -38,4 +38,6 @@ nimbusReportUtils.writePassLogToTestLogger(context.expand('${#TestCase#Print_Mes
 NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
 nimbusReportUtils.writePassLogToTestLogger("Tagged Test Case Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusTags</con:name><con:value>@Tag1</con:value></con:property></con:properties></con:testCase><con:testCase id="5c74771f-16a3-4d8d-a4cf-45adf6eda55a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TaggedDataDrivenTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="5999850c-c4e6-4d6f-80c8-bcb16c7f6a17"><con:settings/><con:config><script>import com.sabre.qa.nimbus.reporting.commons.NimbusReportUtils;
 NimbusReportUtils nimbusReportUtils = new NimbusReportUtils(testRunner,context);
-nimbusReportUtils.writePassLogToTestLogger(context.expand('${#TestCase#Print_Message}')  +  " Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusDataDrivenFlag</con:name><con:value>true</con:value></con:property><con:property><con:name>NimbusDataSourcePath</con:name><con:value>samples/data/DataDrivenTestCase_Data.xlsx|TaggedDataDrivenTestCase</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+nimbusReportUtils.writePassLogToTestLogger(context.expand('${#TestCase#Print_Message}')  +  " Passed");</script></con:config></con:testStep><con:properties><con:property><con:name>NimbusDataDrivenFlag</con:name><con:value>true</con:value></con:property><con:property><con:name>NimbusDataSourcePath</con:name><con:value>samples/data/DataDrivenTestCase_Data.xlsx|TaggedDataDrivenTestCase</con:value></con:property></con:properties></con:testCase><con:testCase id="971df831-20ef-4ec2-9d14-e5a25512df20" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SampleDebugging" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyTestStep" id="e0c4597a-1477-4c2f-80e4-91b537f138fe"><con:settings/><con:config><script>import com.qa.nimbus.SampleGroovyScript;
+SampleGroovyScript sampleGroovyScript = new SampleGroovyScript();
+sampleGroovyScript.GroovyMethod()</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

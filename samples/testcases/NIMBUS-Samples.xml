@@ -21,7 +21,7 @@
   <con:entry key="TestCase" value="SampleDebugging"/>
   <con:entry key="Username" value=""/>
   <con:entry key="user-settings.xml Password" value=""/>
-  <con:entry key="TestRunner Path" value="C:\DevCode\latestDebugging\nimbus\execute\normal"/>
+  <con:entry key="TestRunner Path" value="C:\DevCode\latestDebugging\nimbus\execute\debug"/>
   <con:entry key="Environment" value="Default"/>
   <con:entry key="Coverage Report" value="false"/>
   <con:entry key="Enable UI" value="false"/>

@@ -236,18 +236,6 @@
 									<name>soapui.properties.${soapui.project.name}</name>
 									<value>${soapui.project.properties.file}</value>
 								</property>
-								<property>
-									<name>soapui.logroot</name>
-									<value>logs/</value>
-								</property>
-								<property>
-									<name>soapui.ext.listeners</name>
-									<value>listeners</value>
-								</property>
-								<property>
-									<name>soapui.ext.actions</name>
-									<value>actions</value>
-								</property>
 							</soapuiProperties>
 						</configuration>
 						<executions>

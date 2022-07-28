@@ -142,9 +142,6 @@
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
-			<modules>
-				<module>framework-sub-modules/groovy-scripts</module>
-			</modules>
 			<properties>
 				<soapui.log.level>info</soapui.log.level>
 				<soapui.log.output>reports/req_res_files</soapui.log.output>

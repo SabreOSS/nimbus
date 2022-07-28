@@ -32,5 +32,6 @@ SHIFT
 GOTO Loop
 :Continue
 RD /S /Q reports
-echo "mvn clean install -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE% -Psoapui"
-call mvn install -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE% -Psoapui
+echo "mvn install -Psoapui -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE%"
+call mvn clean install -Pbuild
+call mvn clean install -Psoapui -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE% 

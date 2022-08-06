@@ -21,5 +21,7 @@ do
     esac
 done
 rm -rf reports || true
+echo "mvn clean install"
+call mvn clean install -Pbuild
 echo "mvn exec:java -Pexecute -Dexec.args="-a -freports/req_res_files -tsoapui-settings.xml ${EXEC_ARGS}" ${SYSTEM_PARAMS}"
 mvn exec:java -Pexecute -Dexec.args="-a -freports/req_res_files -tconfig/soap-ui/soapui-settings.xml ${EXEC_ARGS}" ${SYSTEM_PARAMS}

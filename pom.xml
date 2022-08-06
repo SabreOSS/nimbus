@@ -94,7 +94,7 @@
         <profile>
             <id>build</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
                 <module>framework-sub-modules/soapui-listener</module>
@@ -106,9 +106,6 @@
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
-			<modules>
-				<module>framework-sub-modules/soapui-listener</module>
-			</modules>
 			<build>
 				<plugins>
 					<plugin>
@@ -132,120 +129,15 @@
 			<dependencies>
 				<dependency>
 					<groupId>com.sabre.qa.nimbus</groupId>
+					<artifactId>soapui-listener</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>com.sabre.qa.nimbus</groupId>
 					<artifactId>groovy-scripts</artifactId>
 					<version>1.0.0-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
-		</profile>
-		<profile>
-			<id>soapui</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<soapui.log.level>info</soapui.log.level>
-				<soapui.log.output>reports/req_res_files</soapui.log.output>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.smartbear.soapui</groupId>
-						<artifactId>soapui-maven-plugin</artifactId>
-						<version>${soapui.version}</version>
-						<dependencies>
-							<dependency>
-								<groupId>com.smartbear.soapui</groupId>
-								<artifactId>soapui</artifactId>
-								<version>${soapui.version}</version>
-								<exclusions>
-									<exclusion>
-										<groupId>com.jgoodies</groupId>
-										<artifactId>forms</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>com.jgoodies</groupId>
-										<artifactId>looks</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>com.jgoodies</groupId>
-										<artifactId>binding</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>org.apache.httpcomponents</groupId>
-										<artifactId>httpclient</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>org.apache.httpcomponents</groupId>
-										<artifactId>httpcore</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>com.jayway.jsonpath</groupId>
-										<artifactId>json-path</artifactId>
-									</exclusion>
-									<exclusion>
-										<groupId>com.google.guava</groupId>
-										<artifactId>guava</artifactId>
-									</exclusion>
-								</exclusions>
-							</dependency>
-							<dependency>
-								<groupId>org.apache.commons</groupId>
-								<artifactId>commons-lang3</artifactId>
-								<version>3.7</version>
-							</dependency>
-							<dependency>
-								<groupId>org.apache.commons</groupId>
-								<artifactId>commons-text</artifactId>
-								<version>1.4</version>
-							</dependency>
-							<dependency>
-								<groupId>com.sabre.qa.nimbus</groupId>
-								<artifactId>soapui-listener</artifactId>
-								<version>1.0.0-SNAPSHOT</version>
-							</dependency>
-							<dependency>
-								<groupId>com.sabre.qa.nimbus</groupId>
-								<artifactId>groovy-scripts</artifactId>
-								<version>1.0.0-SNAPSHOT</version>
-							</dependency>
-							<dependency>
-								<groupId>com.jgoodies</groupId>
-								<artifactId>forms</artifactId>
-								<version>1.0.7</version>
-							</dependency>
-							<dependency>
-								<groupId>org.apache.httpcomponents</groupId>
-								<artifactId>httpcore</artifactId>
-								<version>4.4.10</version>
-							</dependency>
-						</dependencies>
-						<configuration>
-							<projectFile>${soapui.project.file}</projectFile>
-							<testSuite>${soapui.project.testSuite}</testSuite>
-							<testCase>${soapui.project.testcase}</testCase>
-							<outputFolder>${soapui.log.output}</outputFolder>
-							<junitReport>true</junitReport>
-							<printReport>true</printReport>
-							<exportAll>true</exportAll>
-							<testFailIgnore>true</testFailIgnore>
-							<soapuiProperties combine.children="append">
-								<property>
-									<name>soapui.properties.${soapui.project.name}</name>
-									<value>${soapui.project.properties.file}</value>
-								</property>
-							</soapuiProperties>
-						</configuration>
-						<executions>
-							<execution>
-								<phase>test</phase>
-								<goals>
-									<goal>test</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 	</profiles>
 	<dependencies>

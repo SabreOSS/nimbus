@@ -3,9 +3,6 @@ setlocal enabledelayedexpansion
 set EXEC_ARGS=
 set SYSTEM_PARAMS=
 set NIMBUS_TAGS=
-set SOAPUI_PROJECT_FILE=
-set SOAPUI_TEST_SUITE=
-set SOAPUI_TEST_CASE=
 cd ..\..
 :Loop
 IF "%~1"=="" GOTO Continue
@@ -13,10 +10,6 @@ IF "%~1"=="" GOTO Continue
     set val=%~2
     IF "%arg%"=="-I" (
 	    echo ""
-    )ELSE IF "%arg:~0,2%"=="-s" (
-	    SET SOAPUI_TEST_SUITE=%arg:~2%
-    ) ELSE IF "%arg:~0,2%"=="-c" (
-	    SET SOAPUI_TEST_CASE=%arg:~2%
     ) ELSE IF "%arg%"=="-DNimbusTags" (
 	    set "NIMBUS_TAGS=%arg%=%val%"
 	SHIFT
@@ -26,12 +19,14 @@ IF "%~1"=="" GOTO Continue
     ) ELSE IF "%arg:~0,1%"=="@" (
 	    set "NIMBUS_TAGS=%NIMBUS_TAGS%;%arg%"
     ) ELSE (
-	    set SOAPUI_PROJECT_FILE="%arg%"
+	    set "EXEC_ARGS=%arg% %EXEC_ARGS%"
     )
 SHIFT
 GOTO Loop
 :Continue
 RD /S /Q reports
+echo "mvn clean install"
+call mvn clean install -Pbuild
 @set MAVEN_DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=9876
-echo "mvn clean install -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE% -Psoapui"
-call mvn install -Dmaven.test.failure.ignore=false -Dsoapui.project.file=%SOAPUI_PROJECT_FILE% %SYSTEM_PARAMS% %NIMBUS_TAGS% -Dsoapui.project.testSuite=%SOAPUI_TEST_SUITE% -Dsoapui.project.testcase=%SOAPUI_TEST_CASE% -Psoapui
+echo "mvn exec:java -Pexecute -Dexec.args="-a -freports\req_res_files -tconfig\soap-ui\soapui-settings.xml %EXEC_ARGS% %SYSTEM_PARAMS%" %NIMBUS_TAGS%
+call mvn exec:java -Pexecute -Dexec.args="-a -freports\req_res_files -tconfig\soap-ui\soapui-settings.xml %EXEC_ARGS% %SYSTEM_PARAMS%" %NIMBUS_TAGS%

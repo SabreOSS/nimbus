@@ -24,5 +24,7 @@ SHIFT
 GOTO Loop
 :Continue
 RD /S /Q reports
+echo "mvn clean install"
+call mvn clean install -Pbuild
 echo "mvn exec:java -Pexecute -Dexec.args="-a -freports\req_res_files -tconfig\soap-ui\soapui-settings.xml %EXEC_ARGS% %SYSTEM_PARAMS%" %NIMBUS_TAGS%
-mvn exec:java -Pexecute -Dexec.args="-a -freports\req_res_files -tconfig\soap-ui\soapui-settings.xml %EXEC_ARGS% %SYSTEM_PARAMS%" %NIMBUS_TAGS%
+call mvn exec:java -Pexecute -Dexec.args="-a -freports\req_res_files -tconfig\soap-ui\soapui-settings.xml %EXEC_ARGS% %SYSTEM_PARAMS%" %NIMBUS_TAGS%

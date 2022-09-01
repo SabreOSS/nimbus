@@ -136,7 +136,9 @@ git pull
     * Click on the _Launch_ button
     * In the SoapUI TestRunner Popup window you might see a message _Listening for transport dt_socket at address: 9876_
     
+### Next Feature
 
+* Selenium Integration with SOAPUI
     
 
 ## Contributing

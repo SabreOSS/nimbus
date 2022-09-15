@@ -12,6 +12,9 @@
 
 ## _NIMBUS_
 
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+
+## Don't forget to give a :star: to make the project popular.
 
 NIMBUS is a functional test automation framework built on top of SOAPUI that adds below PRO like capabilities to SOAPUI community edition
 * Data driven capability
@@ -113,7 +116,33 @@ git pull
   * Go to Properties tab and under System Properties specify the system parameters as space/new-line seperated name-value pairs
     * eg : nimbus.klov=true nimbus.klov.mongodb.uri=mongodb://localhost:27017 nimbus.klov.url=http://localhost:7777
 
+### Setting Debug Configuration
 
+* Open the Run/Debug Configuration 
+* Click on the + button
+* Select Remote
+* Enter a name as "_ossNimbus_"
+* Enter the port as "_9876_"
+* Click on the Apply and OK Button
+
+
+### Debugging Capability
+
+* As we all know debugging is a powerful tool, which lets us to find the bugs a lot faster by providing an insight into the internal operations of a program
+* NIMBUS provides the Capability to debug the code while using the SOAPUI
+* Process to start a debugger from the SoapUI
+    * Select the sampleDebugging test suite in the SoapUI
+    * Right click the test suite
+    * Click on the _Launch TestRunner_
+    * Go to Basic Tab and Click on the Browse button to select the TestRunner Path
+    * Path to be selected is "_execute\debug_" folder 
+    * Click on the _Launch_ button
+    * In the SoapUI TestRunner Popup window you might see a message _Listening for transport dt_socket at address: 9876_
+    
+### Next Feature
+
+* Selenium Integration with SOAPUI
+    
 
 ## Contributing
 
